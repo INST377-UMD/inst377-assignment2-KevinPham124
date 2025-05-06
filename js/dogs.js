@@ -47,7 +47,7 @@ function showBreedInfo(breedId) {
     });
 }
 
-if (annyang) {
+wif (annyang) {
   annyang.addCommands({
     'load dog breed *breed': (breed) => {
       const buttons = document.querySelectorAll('#breed-buttons button');
