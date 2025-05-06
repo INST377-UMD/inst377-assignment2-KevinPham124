@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Class Activities - Home</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="libs/annyang.min.js"></script>
+  <script defer src="js/main.js"></script>
+</head> 
+
+<body>
+  <h1>INST377 - Class Activities</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>There are some different activities we can try!</h1>
+    <div class="buttons">
+      <button class="button-75" role="button" onclick="location.href='stocks.html'"><span class="text">Stocks</span></button>
+      <button class="button-75" role="button" onclick="location.href='dogs.html'"><span class="text">Dogs</span></button>
+    </div>
+    
+    <div id="quote-box">
+      <h2>Quote of the Page Load</h2>
+      <p id="quote-text">Loading...</p>
+    </div>
+  </main>
+
+  <section class="audio-controls">
+    <h3>In this web page, there are options to navigate using audio!</h3>
+    <p>Ensure your microphone is enabled to be able to use this feature.</p>
+    <ul>
+      <li>Navigate to a different page</li>
+        <ul>
+          <li>Say: "Navigate to &lt;page&gt;"</li>
+        </ul>
+      <li>Change the page color</li>
+        <ul>
+          <li>Say: "Change color to &lt;color&gt;"</li>
+        </ul>
+      <li>Say "Hello" back to you</li>
+      <ul>
+        <li>Say: "Hello"</li>
+      </ul>
+    </ul>
+    <div class="audio-button-container">
+      <button class="audio-button" onclick="annyang.start()">Turn On Listening</button>
+      <button class="audio-button" onclick="annyang.abort()">Turn Off Listening</button>
+    </div>
+  </section>
+
+  <script>
+    fetch("https://zenquotes.io/api/random")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("quote-text").textContent = data[0].q + " — " + data[0].a;
+      });
+  </script>
+</body>
+
+</html>

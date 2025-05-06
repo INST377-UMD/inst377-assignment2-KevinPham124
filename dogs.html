@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INST377 - Doggos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/siema@1.5.1/dist/siema.min.css">
+  <script src="https://unpkg.com/siema@1.5.1/dist/siema.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/dogs.js"></script>
+</head>
+<body>
+  <h1>INST377 - Class Activities</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Doggos! 🐶</h1>
+
+    <div id="carousel" class="siema"></div>
+    <div class="carousel-controls">
+      <button id="prev-btn">⟵ Prev</button>
+      <button id="next-btn">Next ⟶</button>
+    </div>
+
+    <div id="breed-buttons"></div>
+    <div id="breed-info" class="breed-container hidden">
+      <h3 id="breed-name"></h3>
+      <p id="breed-description"></p>
+      <p><strong>Life Span:</strong> <span id="breed-lifespan"></span> years</p>
+    </div>
+  </main>
+
+  <section class="audio-controls">
+    <h3>In this web page, there are options to navigate using audio!</h3>
+    <p>Ensure your microphone is enabled to be able to use this feature.</p>
+    <ul>
+      <li>Navigate to a different page</li>
+      <ul><li>Say: "Navigate to &lt;page&gt;"</li></ul>
+      <li>Change the page color</li>
+      <ul><li>Say: "Change color to &lt;color&gt;"</li></ul>
+      <li>Say "Hello" back to you</li>
+      <ul><li>Say: "Hello"</li></ul>
+      <li>Load a dog breed</li>
+      <ul><li>Say: "Load dog breed &lt;dog breed name&gt;"</li></ul>
+    </ul>
+
+    <div class="audio-button-container">
+      <button class="audio-button" onclick="annyang.start()">Turn On Listening</button>
+      <button class="audio-button" onclick="annyang.abort()">Turn Off Listening</button>
+    </div>
+  </section>
+</body>
+</html>
