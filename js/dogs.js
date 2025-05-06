@@ -1,8 +1,5 @@
-// js/dogs.js
-
 let siemaInstance = null;
 
-// Load 10 random dog images into Siema carousel
 fetch('https://dog.ceo/api/breeds/image/random/10')
   .then(res => res.json())
   .then(data => {
@@ -13,15 +10,12 @@ fetch('https://dog.ceo/api/breeds/image/random/10')
       carousel.appendChild(img);
     });
 
-    // Initialize Siema (manual only)
     siemaInstance = new Siema({ loop: true });
 
-    // Button controls
     document.getElementById('prev-btn').addEventListener('click', () => siemaInstance.prev());
     document.getElementById('next-btn').addEventListener('click', () => siemaInstance.next());
   });
 
-// Load all dog breeds as buttons
 fetch('https://dogapi.dog/api/v2/breeds')
   .then(res => res.json())
   .then(data => {
@@ -53,7 +47,6 @@ function showBreedInfo(breedId) {
     });
 }
 
-// Voice command: "Load dog breed <name>"
 if (annyang) {
   annyang.addCommands({
     'load dog breed *breed': (breed) => {
